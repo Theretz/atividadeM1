@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Usuário"> <br><br>
+    <input type="password" id="password" placeholder="Senha"> <br> <br>
+    <button onclick="fazerLogin()">Entrar</button>
+    <div id="message" class="message"></div>
+  </div>
+  </div>
+  <script>
+    function fazerLogin() {
+      const usuario = document.getElementById('username').value;
+      const senha = document.getElementById('password').value;
+      const mensagem = document.getElementById('message');
+
+      const usuarioCorreto = 'admin';
+      const senhaCorreta = '1234';
+
+      if (usuario === usuarioCorreto && senha === senhaCorreta) {
+        mensagem.style.color = 'green';
+        mensagem.innerText = 'Login bem-sucedido!';
+      } else {
+        mensagem.style.color = 'red';
+        mensagem.innerText = 'Usuário ou senha incorretos.';
+      }
+    }
+    
+  </script>
+
+</body>
+</html>
